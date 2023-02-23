@@ -56,8 +56,8 @@ public class Principal extends Moneda {
                     monto = moneda.toDolar(monto);
                     Double impuesto = moneda.impuesto(monto);
                     System.out.println(
-                            input_monto + " u$d tiene un costo de " + Math.round(monto + impuesto)
-                                    + "$ con inpuestos incluidos($" + impuesto + ")");
+                            input_monto + " u$d tiene un costo de $" + Math.round(monto + impuesto)
+                                    + " con inpuestos incluidos($" + impuesto + ")");
                     break;
                 }
 
@@ -71,8 +71,8 @@ public class Principal extends Moneda {
                 } else {
                     monto = moneda.toEuro(monto);
                     Double impuesto = moneda.impuesto(monto);
-                    System.out.println(input_monto + " euros tiene un costo de " + Math.round(monto + impuesto)
-                            + "$ con impuestos incluidos($" + impuesto + ").");
+                    System.out.println(input_monto + " euros tiene un costo de $" + Math.round(monto + impuesto)
+                            + " con impuestos incluidos($" + impuesto + ").");
                     break;
                 }
             } else {
