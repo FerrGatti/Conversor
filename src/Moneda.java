@@ -41,7 +41,7 @@ public abstract class Moneda {
     }
 
     // OPCIONES VENTA
-    public void opcionDolar() {
+    public void ventaDolar() {
         String input_monto = JOptionPane.showInputDialog("Cuanto desea convertir: ");
         double monto = Integer.parseInt(input_monto);
         if (monto < 1) {
@@ -52,7 +52,7 @@ public abstract class Moneda {
         }
     }
 
-    public void opcionEuro() {
+    public void ventaEuro() {
         String input_monto = JOptionPane.showInputDialog("Cuanto desea convertir: ");
         double monto = Integer.parseInt(input_monto);
         if (monto < 1) {
