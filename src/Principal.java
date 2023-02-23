@@ -19,7 +19,7 @@ public class Principal extends Moneda {
                 throw new MonedaNegativaException("Valor erroneo");
             } else {
                 monto = moneda.toDolar(monto);
-                System.out.println(input_monto + "u$d" + " ==> " + monto + "$");
+                System.out.println(input_monto + "u$d" + " ==> $" + monto);
             }
 
             // OPCION EURO
@@ -31,7 +31,7 @@ public class Principal extends Moneda {
                 throw new MonedaNegativaException("Valor erroneo");
             } else {
                 monto = moneda.toEuro(monto);
-                System.out.println(input_monto + "€ " + " ==> " + monto + "$");
+                System.out.println(input_monto + "€ " + " ==> $" + monto);
             }
 
         }
