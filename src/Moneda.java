@@ -3,6 +3,16 @@ import javax.swing.JOptionPane;
 public abstract class Moneda {
     private String input_moneda; // <-- Se le solicita al usuario que ingrese un tipo de moneda para trabajar
 
+    // Valor de monedas compra-venta Argentina
+
+    // Dolar
+    Double dolarCompra = 203.0;
+    Double dolarVenta = 195.49;
+
+    // Euro
+    Double euroCompra = 214.28;
+    Double euroVenta = 205.07;
+
     // GETTERS & SETTERS
 
     public String getMoneda() {
@@ -16,23 +26,23 @@ public abstract class Moneda {
     // VALOR DEL DOLAR
     // Compra
     public Double toDolar(Double monto) {
-        return monto = monto * 203.0;
+        return monto = monto * this.dolarCompra;
     }
 
     // Venta
     public Double fromDolar(Double monto) {
-        return monto = monto * 195.49;
+        return monto = monto * this.dolarVenta;
     }
 
     // VALOR DEL EURO
     // Compra
     public Double toEuro(Double monto) {
-        return monto = monto * 214.28;
+        return monto = monto * this.euroCompra;
     }
 
     // Venta
     public Double fromEuro(Double monto) {
-        return monto = monto * 205.07;
+        return monto = monto * this.euroVenta;
     }
 
     // IMPUESTO PAIS
@@ -74,7 +84,7 @@ public abstract class Moneda {
             monto = toDolar(monto);
             Double impuesto = impuesto(monto);
             System.out.println(
-                    input_monto + " u$d tiene un costo de $" + Math.round(monto + impuesto)
+                    input_monto + " u$d ====> $" + Math.round(monto + impuesto)
                             + " con inpuestos incluidos($" + impuesto + ")");
         }
     }
@@ -88,7 +98,7 @@ public abstract class Moneda {
         } else {
             monto = toEuro(monto);
             Double impuesto = impuesto(monto);
-            System.out.println(input_monto + " euros tiene un costo de $" + Math.round(monto + impuesto)
+            System.out.println(input_monto + " euros ====> $" + Math.round(monto + impuesto)
                     + " con impuestos incluidos($" + impuesto + ").");
         }
     }
