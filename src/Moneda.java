@@ -1,6 +1,6 @@
 import javax.swing.JOptionPane;
 
-public abstract class Moneda {
+public class Moneda {
     private String input_moneda; // <-- Se le solicita al usuario que ingrese un tipo de moneda para trabajar
 
     // Valor de monedas compra-venta Argentina
@@ -84,7 +84,7 @@ public abstract class Moneda {
             monto = toDolar(monto);
             Double impuesto = impuesto(monto);
             System.out.println(
-                    input_monto + " u$d ====> $" + Math.round(monto + impuesto)
+                    input_monto + " u$d tiene un costo de $" + Math.round(monto + impuesto)
                             + " con inpuestos incluidos($" + impuesto + ")");
         }
     }
@@ -98,7 +98,7 @@ public abstract class Moneda {
         } else {
             monto = toEuro(monto);
             Double impuesto = impuesto(monto);
-            System.out.println(input_monto + " euros ====> $" + Math.round(monto + impuesto)
+            System.out.println(input_monto + " euros tiene un costo de $" + Math.round(monto + impuesto)
                     + " con impuestos incluidos($" + impuesto + ").");
         }
     }
