@@ -1,7 +1,17 @@
 import javax.swing.JOptionPane;
 
-public abstract class Moneda {
+public class Moneda {
     private String input_moneda; // <-- Se le solicita al usuario que ingrese un tipo de moneda para trabajar
+
+    // Valor de monedas compra-venta Argentina
+
+    // Dolar
+    Double dolarCompra = 203.0;
+    Double dolarVenta = 195.49;
+
+    // Euro
+    Double euroCompra = 214.28;
+    Double euroVenta = 205.07;
 
     // GETTERS & SETTERS
 
@@ -16,23 +26,23 @@ public abstract class Moneda {
     // VALOR DEL DOLAR
     // Compra
     public Double toDolar(Double monto) {
-        return monto = monto * 203.0;
+        return monto = monto * this.dolarCompra;
     }
 
     // Venta
     public Double fromDolar(Double monto) {
-        return monto = monto * 195.49;
+        return monto = monto * this.dolarVenta;
     }
 
     // VALOR DEL EURO
     // Compra
     public Double toEuro(Double monto) {
-        return monto = monto * 214.28;
+        return monto = monto * this.euroCompra;
     }
 
     // Venta
     public Double fromEuro(Double monto) {
-        return monto = monto * 205.07;
+        return monto = monto * this.euroVenta;
     }
 
     // IMPUESTO PAIS
@@ -41,7 +51,7 @@ public abstract class Moneda {
     }
 
     // OPCIONES VENTA
-    public void opcionDolar() {
+    public void ventaDolar() {
         String input_monto = JOptionPane.showInputDialog("Cuanto desea convertir: ");
         double monto = Integer.parseInt(input_monto);
         if (monto < 1) {
@@ -52,7 +62,7 @@ public abstract class Moneda {
         }
     }
 
-    public void opcionEuro() {
+    public void ventaEuro() {
         String input_monto = JOptionPane.showInputDialog("Cuanto desea convertir: ");
         double monto = Integer.parseInt(input_monto);
         if (monto < 1) {

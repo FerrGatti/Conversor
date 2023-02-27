@@ -13,12 +13,12 @@ public class ConversorMoneda extends Moneda {
         // OPCION DOLAR
 
         if (moneda.getMoneda().equalsIgnoreCase(dolar)) {
-            moneda.opcionDolar();
+            moneda.ventaDolar();
 
             // OPCION EURO
 
         } else if (moneda.getMoneda().equalsIgnoreCase(euro)) {
-            moneda.opcionEuro();
+            moneda.ventaEuro();
 
         }
 
