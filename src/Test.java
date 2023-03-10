@@ -1,5 +1,7 @@
-public class Test extends ConversorGUI {
+import com.conversor.Conversor;
+
+public class Test extends Conversor {
     public static void main(String[] args) {
-        ConversorGUI ventana = new ConversorGUI();
+        Conversor ventana = new Conversor();
     }
 }

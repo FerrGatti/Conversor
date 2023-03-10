@@ -1,5 +1,7 @@
 import javax.swing.JOptionPane;
 
+import com.conversor.MonedaNegativaException;
+
 public class Moneda {
     private String input_moneda; // <-- Se le solicita al usuario que ingrese un tipo de moneda para trabajar
 
@@ -7,7 +9,7 @@ public class Moneda {
 
     // Dolar
     Double dolarCompra = 203.0;
-    Double dolarVenta = 195.49;
+    Double dolarVenta = 197.97;
 
     // Euro
     Double euroCompra = 214.28;

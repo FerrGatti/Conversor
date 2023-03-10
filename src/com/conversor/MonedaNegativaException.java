@@ -1,3 +1,5 @@
+package com.conversor;
+
 public class MonedaNegativaException extends RuntimeException {
     public MonedaNegativaException() {
         super();
