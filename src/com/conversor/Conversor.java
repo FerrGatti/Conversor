@@ -35,60 +35,51 @@ public class Conversor extends JFrame implements ActionListener {
 
         if (opcion.equalsIgnoreCase("Temperatura")) {
             label1 = new JLabel("Cantidad");
-            add(label1);
             texto1 = new JTextField(10);
-            add(texto1);
             label2 = new JLabel("Temperatura de origen");
-            add(label2);
             combo1 = new JComboBox<>();
             combo1.addItem("Celcius");
             combo1.addItem("Farenheit");
             combo1.addItem("Kelvin");
-            add(combo1);
             label3 = new JLabel("Temperatura destino");
-            add(label3);
             combo2 = new JComboBox<>();
             combo2.addItem("Celcius");
             combo2.addItem("Farenheit");
             combo2.addItem("Kelvin");
-            add(combo2);
-            boton = new JButton("Convertir");
-            boton.addActionListener(this);
-            add(boton);
-            texto2 = new JTextField(10);
-            texto2.setEditable(false);
-            add(texto2);
             setTitle("Conversor de temperatura");
         } else if (opcion.equalsIgnoreCase("Divisas")) { // <- CONVERTIR DIVISAS
             label1 = new JLabel("Cantidad:");
-            add(label1);
             texto1 = new JTextField(10);
-            add(texto1);
             label2 = new JLabel("Moneda de origen:");
-            add(label2);
             combo1 = new JComboBox();
             combo1.addItem("USD");
             combo1.addItem("EUR");
             combo1.addItem("ARG");
-            add(combo1);
             label3 = new JLabel("Moneda de destino:");
-            add(label3);
             combo2 = new JComboBox();
             combo2.addItem("USD");
             combo2.addItem("EUR");
             combo2.addItem("ARG");
-            add(combo2);
-            boton = new JButton("Convertir");
-            boton.addActionListener(this);
-            add(boton);
-            texto2 = new JTextField(10);
-            texto2.setEditable(false);
-            add(texto2);
             setTitle("Conversor de Divisas");
         } else { // <- ERROR AL INGRESAR UN VALOR NO VALIDO
             throw new MonedaNegativaException("Valor erroneo");
 
         }
+
+        // Agregando objetos y sus valores a la ventana.
+
+        add(label1);
+        add(texto1);
+        add(label2);
+        add(combo1);
+        add(label3);
+        add(combo2);
+        boton = new JButton("Convertir");
+        boton.addActionListener(this);
+        add(boton);
+        texto2 = new JTextField(10);
+        texto2.setEditable(false);
+        add(texto2);
         label1.setBackground(new Color(0, 0, 0));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(400, 150);
