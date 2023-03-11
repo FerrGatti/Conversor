@@ -4,6 +4,7 @@ import javax.swing.*;
 
 import com.conversor.model.conversorMoneda;
 import com.conversor.model.conversorTemperatura;
+import com.conversor.model.conversorLongitud;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -20,7 +21,7 @@ public class Conversor extends JFrame implements ActionListener {
 
     private JButton boton;
 
-    String[] options = { "Temperatura", "Divisas" };
+    String[] options = { "Temperatura", "Divisas", "Longitud" };
     String opcion = (String) JOptionPane.showInputDialog(null, "Que desea convertir?", "Conversor",
             JOptionPane.QUESTION_MESSAGE, null, options, options[1]);
 
@@ -64,6 +65,18 @@ public class Conversor extends JFrame implements ActionListener {
             combo2.addItem("EUR");
             combo2.addItem("ARG");
             setTitle("Conversor de Divisas");
+        } else if (opcion.equalsIgnoreCase("Longitud")) {
+            label1 = new JLabel("Cantidad");
+            texto1 = new JTextField(10);
+            label2 = new JLabel("Longitud inicial");
+            combo1 = new JComboBox<>();
+            combo1.addItem("Kilometro");
+            combo1.addItem("Milla");
+            label3 = new JLabel("Longitud destino");
+            combo2 = new JComboBox<>();
+            combo2.addItem("Kilometro");
+            combo2.addItem("Milla");
+            setTitle("Conversor de longitud");
         }
 
         // Agregando objetos y sus valores a la ventana.
@@ -94,7 +107,7 @@ public class Conversor extends JFrame implements ActionListener {
         // En caso de que el usuario al convertir divisas ingrese un valor menor a 0
         // arrojaremos un error.
 
-        if (opcion.equalsIgnoreCase("Divisas")) {
+        if (opcion.equalsIgnoreCase("Divisas") || opcion.equalsIgnoreCase("Longitud")) {
             if (cantidad < 0) {
                 throw new MonedaNegativaException("Valor erroneo");
             }
@@ -103,12 +116,15 @@ public class Conversor extends JFrame implements ActionListener {
         String destino = (String) combo2.getSelectedItem();
         double tasa = obtenerTasa(origen, destino);
         double formula = obtenerFormula(origen, destino);
+        double formula2 = obtenerFormula2(origen, destino);
 
         // Variantes de formulas para resultado dependiendo de que decidamos convertir
 
         if (opcion.equalsIgnoreCase("Temperatura")) {
             resultado = formula;
-        } else { // <- Conversion de divisas
+        } else if (opcion.equalsIgnoreCase("Longitud")) { // <- Conversion de divisas
+            resultado = formula2;
+        } else {
             resultado = cantidad * tasa;
         }
         texto2.setText(String.format("%.2f", resultado));
@@ -149,6 +165,17 @@ public class Conversor extends JFrame implements ActionListener {
             return conversorTemperatura.kelvinFarenheit(Double.parseDouble(texto1.getText()));
         }
         return Double.parseDouble(texto1.getText());
+    }
+    // Formulas para conversion de longitud
+
+    private double obtenerFormula2(String origen, String destino) {
+        if (combo1.getSelectedItem() == "Kilometro" && combo2.getSelectedItem() == "Milla") {
+            return conversorLongitud.kilometroMilla(Double.parseDouble(texto1.getText()));
+        } else if (combo1.getSelectedItem() == "Milla" && combo2.getSelectedItem() == "Kilometro") {
+            return conversorLongitud.millaKilometro(Double.parseDouble(texto1.getText()));
+        } else {
+            return Double.parseDouble(texto1.getText());
+        }
     }
 
     // Formulas para conversion de divisas
