@@ -20,7 +20,9 @@ public class Conversor extends JFrame implements ActionListener {
 
     private JButton boton;
 
-    String opcion = JOptionPane.showInputDialog("Que desea convertir? Divisas o Temperatura", accessibleContext);
+    String[] options = { "Temperatura", "Divisas" };
+    String opcion = (String) JOptionPane.showInputDialog(null, "Que desea convertir?", "Conversor",
+            JOptionPane.QUESTION_MESSAGE, null, options, options[1]);
 
     /*
      * Vamos a proceder a asignar valores a estos objetos
@@ -30,6 +32,7 @@ public class Conversor extends JFrame implements ActionListener {
                                                          * valor incorrecto.
                                                          */
         setLayout(new GridLayout(4, 3));
+        setLocationRelativeTo(null);
 
         // OPCION CONVERTIR TEMPERATURAS
 
