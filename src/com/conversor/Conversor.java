@@ -64,9 +64,6 @@ public class Conversor extends JFrame implements ActionListener {
             combo2.addItem("EUR");
             combo2.addItem("ARG");
             setTitle("Conversor de Divisas");
-        } else { // <- ERROR AL INGRESAR UN VALOR NO VALIDO
-            throw new MonedaNegativaException("Valor erroneo");
-
         }
 
         // Agregando objetos y sus valores a la ventana.
@@ -78,7 +75,7 @@ public class Conversor extends JFrame implements ActionListener {
         add(label3);
         add(combo2);
         boton = new JButton("Convertir");
-        boton.addActionListener(this);
+        boton.addActionListener(this); // Agregamos el action listener que creamos mas adelante al boton.
         add(boton);
         texto2 = new JTextField(10);
         texto2.setEditable(false);
@@ -90,7 +87,7 @@ public class Conversor extends JFrame implements ActionListener {
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(ActionEvent e) { // <- Funcion que se ejecutara cuando hagamos click en el boton
         double resultado;
         double cantidad = Double.parseDouble(texto1.getText());
 
@@ -151,7 +148,7 @@ public class Conversor extends JFrame implements ActionListener {
         } else if (combo1.getSelectedItem() == "Kelvin" && combo2.getSelectedItem() == "Farenheit") {
             return conversorTemperatura.kelvinFarenheit(Double.parseDouble(texto1.getText()));
         }
-        return 1;
+        return Double.parseDouble(texto1.getText());
     }
 
     // Formulas para conversion de divisas
