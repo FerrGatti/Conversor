@@ -1,13 +1,14 @@
-## Getting Started
+## Challenge Conversor
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Este es un challenge para ONE Oracle el cual consiste en crear un conversor de divisas mediante Java.
+Como plus, se agrega un conversor de temperaturas y uno de logitudes.
 
-## Folder Structure
+## Estructura de las carpetas
 
-The workspace contains two folders by default, where:
+El espacio de trabajo contiene dos una carperta principal(conversor) la cual contiene las clases y los packages que ejecutan el programa.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+- `src/com/conversor`: Se encuentra la clase principal donde estan creados los elementos de la ventana, con sus respectivas aplicaciones.
+- `src/com/conversor/model`: Se encuentran los packages aplicados para convertir las divisas, longitudes y temperaturas.
 
 Meanwhile, the compiled output files will be generated in the `bin` folder by default.
 
