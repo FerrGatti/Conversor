@@ -46,8 +46,8 @@ public class Conversor extends JFrame implements ActionListener {
             combo1.addItem("Kelvin");
             label3 = new JLabel("Temperatura destino");
             combo2 = new JComboBox<>();
-            combo2.addItem("Celcius");
             combo2.addItem("Farenheit");
+            combo2.addItem("Celcius");
             combo2.addItem("Kelvin");
             setTitle("Conversor de temperatura");
         } else if (opcion.equalsIgnoreCase("Divisas")) { // <- CONVERTIR DIVISAS
@@ -63,9 +63,9 @@ public class Conversor extends JFrame implements ActionListener {
             combo1.addItem("WON");
             label3 = new JLabel("Moneda de destino:");
             combo2 = new JComboBox();
-            combo2.addItem("USD");
-            combo2.addItem("EUR");
             combo2.addItem("ARG");
+            combo2.addItem("EUR");
+            combo2.addItem("USD");
             combo2.addItem("LIBRA");
             combo2.addItem("YEN");
             combo2.addItem("WON");
@@ -79,8 +79,8 @@ public class Conversor extends JFrame implements ActionListener {
             combo1.addItem("Milla");
             label3 = new JLabel("Longitud destino");
             combo2 = new JComboBox<>();
-            combo2.addItem("Kilometro");
             combo2.addItem("Milla");
+            combo2.addItem("Kilometro");
             setTitle("Conversor de longitud");
         }
 
