@@ -59,11 +59,17 @@ public class Conversor extends JFrame implements ActionListener {
             combo1.addItem("USD");
             combo1.addItem("EUR");
             combo1.addItem("ARG");
+            combo1.addItem("LIBRA");
+            combo1.addItem("YEN");
+            combo1.addItem("WON");
             label3 = new JLabel("Moneda de destino:");
             combo2 = new JComboBox();
             combo2.addItem("USD");
             combo2.addItem("EUR");
             combo2.addItem("ARG");
+            combo2.addItem("LIBRA");
+            combo2.addItem("YEN");
+            combo2.addItem("WON");
             setTitle("Conversor de Divisas");
         } else if (opcion.equalsIgnoreCase("Longitud")) {
             label1 = new JLabel("Cantidad");
@@ -136,7 +142,19 @@ public class Conversor extends JFrame implements ActionListener {
 
         if (opcion.equalsIgnoreCase("Divisas")) {
             if (combo1.getSelectedItem() == "ARG" && combo2.getSelectedItem() == "USD"
-                    || combo1.getSelectedItem() == "ARG" && combo2.getSelectedItem() == "EUR") {
+                    || combo1.getSelectedItem() == "ARG" && combo2.getSelectedItem() == "EUR"
+                    || combo1.getSelectedItem() == "ARG" && combo2.getSelectedItem() == "LIBRA"
+                    || combo1.getSelectedItem() == "YEN" && combo2.getSelectedItem() == "LIBRA"
+                    || combo1.getSelectedItem() == "YEN" && combo2.getSelectedItem() == "EUR"
+                    || combo1.getSelectedItem() == "YEN" && combo2.getSelectedItem() == "USD"
+                    || combo1.getSelectedItem() == "ARG" && combo2.getSelectedItem() == "YEN"
+                    || combo1.getSelectedItem() == "WON" && combo2.getSelectedItem() == "USD"
+                    || combo1.getSelectedItem() == "WON" && combo2.getSelectedItem() == "EUR"
+                    || combo1.getSelectedItem() == "WON" && combo2.getSelectedItem() == "LIBRA"
+                    || combo1.getSelectedItem() == "WON" && combo2.getSelectedItem() == "ARG"
+                    || combo1.getSelectedItem() == "WON" && combo2.getSelectedItem() == "YEN"
+                    || combo1.getSelectedItem() == "EUR" && combo2.getSelectedItem() == "LIBRA"
+                    || combo1.getSelectedItem() == "USD" && combo2.getSelectedItem() == "LIBRA") {
                 resultado = cantidad / tasa;
             }
             // Si convertimos de Pesos a dolares le agregamos el impuesto pais
@@ -182,17 +200,65 @@ public class Conversor extends JFrame implements ActionListener {
 
     private double obtenerTasa(String origen, String destino) {
         if (combo1.getSelectedItem() == "USD" && combo2.getSelectedItem() == "ARG") {
-            return conversorMoneda.PesoDolar(Double.parseDouble(texto1.getText())); // <-- Dolar a peso
+            return conversorMoneda.PesoDolar(Double.parseDouble(texto1.getText())); // <-- PESOS
         } else if (combo1.getSelectedItem() == "ARG" && combo2.getSelectedItem() == "USD") {
-            return conversorMoneda.DolarPeso(Double.parseDouble(texto1.getText())); // <-- Peso a dolar
+            return conversorMoneda.DolarPeso(Double.parseDouble(texto1.getText()));
         } else if (combo1.getSelectedItem() == "ARG" && combo2.getSelectedItem() == "EUR") {
-            return conversorMoneda.PesoEuro(Double.parseDouble(texto1.getText())); // <-- Peso a Euro
+            return conversorMoneda.PesoEuro(Double.parseDouble(texto1.getText()));
+        } else if (combo1.getSelectedItem() == "ARG" && combo2.getSelectedItem() == "YEN") {
+            return conversorMoneda.PesoYen(Double.parseDouble(texto1.getText()));
+        } else if (combo1.getSelectedItem() == "ARG" && combo2.getSelectedItem() == "WON") {
+            return conversorMoneda.PesoWon(Double.parseDouble(texto1.getText()));
+        } else if (combo1.getSelectedItem() == "ARG" && combo2.getSelectedItem() == "LIBRA") {
+            return conversorMoneda.PesoLibra(Double.parseDouble(texto1.getText())); // <-- EUROS
         } else if (combo1.getSelectedItem() == "EUR" && combo2.getSelectedItem() == "ARG") {
-            return conversorMoneda.PesoEuro(Double.parseDouble(texto1.getText())); // <-- Euro a Peso
+            return conversorMoneda.PesoEuro(Double.parseDouble(texto1.getText()));
         } else if (combo1.getSelectedItem() == "EUR" && combo2.getSelectedItem() == "USD") {
-            return conversorMoneda.EuroDolar(Double.parseDouble(texto1.getText())); // <-- Euro a Dolar
+            return conversorMoneda.EuroDolar(Double.parseDouble(texto1.getText()));
+        } else if (combo1.getSelectedItem() == "EUR" && combo2.getSelectedItem() == "YEN") {
+            return conversorMoneda.EuroYen(Double.parseDouble(texto1.getText()));
+        } else if (combo1.getSelectedItem() == "EUR" && combo2.getSelectedItem() == "WON") {
+            return conversorMoneda.EuroWon(Double.parseDouble(texto1.getText()));
+        } else if (combo1.getSelectedItem() == "EUR" && combo2.getSelectedItem() == "LIBRA") {
+            return conversorMoneda.EuroLibra(Double.parseDouble(texto1.getText())); // <-- DOLARES
         } else if (combo1.getSelectedItem() == "USD" && combo2.getSelectedItem() == "EUR") {
-            return conversorMoneda.DolarEuro(Double.parseDouble(texto1.getText())); // <-- Dolar a Euro
+            return conversorMoneda.DolarEuro(Double.parseDouble(texto1.getText()));
+        } else if (combo1.getSelectedItem() == "USD" && combo2.getSelectedItem() == "WON") {
+            return conversorMoneda.DolarWon(Double.parseDouble(texto1.getText()));
+        } else if (combo1.getSelectedItem() == "USD" && combo2.getSelectedItem() == "YEN") {
+            return conversorMoneda.DolarYen(Double.parseDouble(texto1.getText()));
+        } else if (combo1.getSelectedItem() == "USD" && combo2.getSelectedItem() == "LIBRA") {
+            return conversorMoneda.DolarLibra(Double.parseDouble(texto1.getText())); // <-- LIBRAS
+        } else if (combo1.getSelectedItem() == "LIBRA" && combo2.getSelectedItem() == "ARG") {
+            return conversorMoneda.PesoLibra(Double.parseDouble(texto1.getText()));
+        } else if (combo1.getSelectedItem() == "LIBRA" && combo2.getSelectedItem() == "USD") {
+            return conversorMoneda.DolarLibra(Double.parseDouble(texto1.getText()));
+        } else if (combo1.getSelectedItem() == "LIBRA" && combo2.getSelectedItem() == "EUR") {
+            return conversorMoneda.EuroLibra(Double.parseDouble(texto1.getText()));
+        } else if (combo1.getSelectedItem() == "LIBRA" && combo2.getSelectedItem() == "YEN") {
+            return conversorMoneda.LibraYen(Double.parseDouble(texto1.getText()));
+        } else if (combo1.getSelectedItem() == "LIBRA" && combo2.getSelectedItem() == "WON") {
+            return conversorMoneda.LibraWon(Double.parseDouble(texto1.getText())); // <-- YENES
+        } else if (combo1.getSelectedItem() == "YEN" && combo2.getSelectedItem() == "ARG") {
+            return conversorMoneda.PesoYen(Double.parseDouble(texto1.getText()));
+        } else if (combo1.getSelectedItem() == "YEN" && combo2.getSelectedItem() == "USD") {
+            return conversorMoneda.DolarYen(Double.parseDouble(texto1.getText()));
+        } else if (combo1.getSelectedItem() == "YEN" && combo2.getSelectedItem() == "EUR") {
+            return conversorMoneda.EuroYen(Double.parseDouble(texto1.getText()));
+        } else if (combo1.getSelectedItem() == "YEN" && combo2.getSelectedItem() == "LIBRA") {
+            return conversorMoneda.LibraYen(Double.parseDouble(texto1.getText()));
+        } else if (combo1.getSelectedItem() == "YEN" && combo2.getSelectedItem() == "WON") {
+            return conversorMoneda.YenWon(Double.parseDouble(texto1.getText())); // <-- WONES
+        } else if (combo1.getSelectedItem() == "WON" && combo2.getSelectedItem() == "ARG") {
+            return conversorMoneda.PesoWon(Double.parseDouble(texto1.getText()));
+        } else if (combo1.getSelectedItem() == "WON" && combo2.getSelectedItem() == "USD") {
+            return conversorMoneda.DolarWon(Double.parseDouble(texto1.getText()));
+        } else if (combo1.getSelectedItem() == "WON" && combo2.getSelectedItem() == "EUR") {
+            return conversorMoneda.EuroWon(Double.parseDouble(texto1.getText()));
+        } else if (combo1.getSelectedItem() == "WON" && combo2.getSelectedItem() == "LIBRA") {
+            return conversorMoneda.LibraWon(Double.parseDouble(texto1.getText()));
+        } else if (combo1.getSelectedItem() == "WON" && combo2.getSelectedItem() == "YEN") {
+            return conversorMoneda.YenWon(Double.parseDouble(texto1.getText()));
         }
         return 1;
     }
