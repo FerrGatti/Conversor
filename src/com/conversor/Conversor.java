@@ -1,7 +1,7 @@
 package com.conversor;
 
 import javax.swing.*;
-
+import javax.swing.JRootPane;
 import com.conversor.model.conversorMoneda;
 import com.conversor.model.conversorTemperatura;
 import com.conversor.model.conversorLongitud;
@@ -34,7 +34,6 @@ public class Conversor extends JFrame implements ActionListener {
                                                          */
         setLayout(new GridLayout(4, 3));
         setLocationRelativeTo(null);
-
         // OPCION CONVERTIR TEMPERATURAS
 
         if (opcion.equalsIgnoreCase("Temperatura")) {
