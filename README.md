@@ -13,15 +13,17 @@ El espacio de trabajo contiene dos una carperta principal(conversor) la cual con
 
 ## Aplicacion de Conversor
 
-En primera instancia, iniciamos nuestra aplicacion con un JOpcionPane.ShowInputDialog el cual, dependiendo de lo que elijamos
-modificara lo que nuestro JFrame nos muestre a continuacion. <br> <br>
+Para el menu de opciones el cual determinara que convertiremos se utiliza un JOptionPane.ShowInputDialog <br> <br>
 ![conversor-principal](https://user-images.githubusercontent.com/95766371/224886144-4f88f7c5-7441-4858-92d4-e9a3b70c0d32.png)
 <br> <br>
-Cada una de estas opciones estan ligadas a un package el cual contiene formulas determinadas para cada una, las cuales actuaran como
-conversores de moneda, longitud y temperatura. <br> <br>
+Cada una de estas opciones estan ligadas a un package el cual contiene metodos para cada conversion, los cuales podremos utilizar mediante el nombre de su package. <br> <br>
 ![packages](https://user-images.githubusercontent.com/95766371/224886943-460332ab-9093-4e83-ac0b-b916f42ca175.png)
 <br> <br>
-Por ej, si seleccionamos la opcion de temperatura, la aplicacion utilizara las formulas escritas en el package para generar las conversiones. <br>
-![opcion temperatura](https://user-images.githubusercontent.com/95766371/224887684-c1a649f2-d103-44e8-b53e-4de9fc206d91.png) <br>
 
-![package longitud](https://user-images.githubusercontent.com/95766371/224887699-ee769426-9c18-4c06-ba12-6c1ed757ebc4.png)
+Por ej, si seleccionamos la opcion de temperatura, la aplicacion utilizara las formulas escritas en el package para generar las conversiones. <br>
+
+![metodotemperatura1](https://user-images.githubusercontent.com/95766371/225162098-7933b14c-86ec-4ed9-8bc8-51fe52cb9567.png)
+<br> <br>
+ ![metodotemperatura2](https://user-images.githubusercontent.com/95766371/225162358-41f5029b-2ed4-4672-bccb-3b07b365e583.png)
+<br> <br>
+![opcion temperatura](https://user-images.githubusercontent.com/95766371/225162557-a8b6ae09-9924-4556-a96e-048b6df5833d.png)
