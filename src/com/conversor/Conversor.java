@@ -82,6 +82,8 @@ public class Conversor extends JFrame implements ActionListener {
             combo2.addItem("Milla");
             combo2.addItem("Kilometro");
             setTitle("Conversor de longitud");
+        } else {
+            throw new IllegalArgumentException("Opción inválida: " + opcion);
         }
 
         // Agregando objetos y sus valores a la ventana.
