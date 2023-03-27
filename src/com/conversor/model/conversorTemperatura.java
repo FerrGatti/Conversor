@@ -25,3 +25,12 @@ public class conversorTemperatura {
         return (valor + 273.15);
     }
 }
+
+// Utilizamos los metodos staticos para poder acceder a ellos llamando a la
+// clase directamente, sin necesidad de instanciar un objeto, debido a que no
+// actuan sobre ellos.
+// Por ej, la utilizamos en el conversor de esta manera:
+// conversorTemperatura.farenheitCelsius(double);
+//
+// Los metodos static no pueden acceder a campos de ejemplar(variables/costantes
+// declaradas en la clase) a menos que estas tambien sean statics.
